@@ -25,7 +25,7 @@ function showGifs() {
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
             var rating = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
-            var title = $("<p>").text("Title: " + results[i].title.toUpperCase());
+            // var title = $("<p>").text(results[i].title.toUpperCase());
             var image = $("<img>").attr("src", results[i].images.fixed_height_still.url);
             image.attr("data-still", ("src", results[i].images.fixed_height_still.url));
             image.attr("data-animate", ("src", results[i].images.fixed_height.url));
@@ -33,8 +33,8 @@ function showGifs() {
             image.addClass("giphy");
             gifDiv.append(image);
             gifDiv.append(rating);
-            gifDiv.append(title);
-            $("#gifCollection").prepend(gifDiv);
+            // gifDiv.append(title);
+            $(".row").prepend(gifDiv);
         }
         $(".giphy").on("click", function (event) {
             event.preventDefault();
