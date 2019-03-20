@@ -1,17 +1,16 @@
 button, div, form, input {
     margin: 10px;
-    /* font-family: cursive; */
 }
 
 body {
     background: url(../images/heic1313b.jpg);
-    font-family: cursive;
+    font-family: 'Caveat Brush', cursive;
     color: lightgreen;
+    font-size: 18pt;
 }
 
 h1 {
     color: palevioletred;
-    font-weight: bold;
 }
 
 form {
