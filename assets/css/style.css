@@ -1,3 +1,25 @@
 button, div, form, input {
-            margin: 10px;
+    margin: 10px;
+    /* font-family: cursive; */
+}
+
+body {
+    background: url(../images/heic1313b.jpg);
+    font-family: cursive;
+    color: lightgreen;
+}
+
+h1 {
+    color: palevioletred;
+    font-weight: bold;
+}
+
+form {
+    color: darkorchid;
+    font-weight: bold;
+}
+
+.gifButton {
+    background: cornflowerblue;
+    color: white;
 }

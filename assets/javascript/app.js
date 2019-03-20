@@ -1,4 +1,4 @@
-var topic = ["Wayne's World", "Clueless", "Fresh Prince", "SNL", "Fanny Packs", "Grunge", "Macarena"]
+var topic = ["In Living Color", "Wayne's World", "Clueless", "Fresh Prince", "90210", "The Chronic", "Fanny Packs", "Mother Love Bone", "Michael Jordan", "Pulp Fiction", "My So Called Life", "Clerks", "Scrunchies", "Seinfeld", "TLC"]
 
 function createButtons() {
     $("#buttons-view").empty();
@@ -24,14 +24,16 @@ function showGifs() {
         var results = response.data;
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
-            var p = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
+            var rating = $("<p>").text("Rating: " + results[i].rating.toUpperCase());
+            var title = $("<p>").text("Title: " + results[i].title.toUpperCase());
             var image = $("<img>").attr("src", results[i].images.fixed_height_still.url);
             image.attr("data-still", ("src", results[i].images.fixed_height_still.url));
             image.attr("data-animate", ("src", results[i].images.fixed_height.url));
             image.attr("data-state", "still");
             image.addClass("giphy");
             gifDiv.append(image);
-            gifDiv.append(p);
+            gifDiv.append(rating);
+            gifDiv.append(title);
             $("#gifCollection").prepend(gifDiv);
         }
         $(".giphy").on("click", function (event) {
@@ -54,7 +56,7 @@ function showGifs() {
 $("#add-gif").on("click", function (event) {
     event.preventDefault();
     var newGif = $("#search-input").val().trim();
-    topic.push(newGif);
+    if (topic.indexOf(newGif) < 0) topic.push(newGif);
     createButtons();
 })
 
